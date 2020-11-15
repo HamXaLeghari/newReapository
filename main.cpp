@@ -1,27 +1,40 @@
 #include <iostream>
+
+
 using namespace std;
+
+long long n,sum = 0;
+
+long long count(long long n);
 
 int main() {
 
-    double n,base,temp;
+    cout<<"Enter any number."<<endl;
+    cin>>n;
+    long long a;
 
-    cout << "Enter Number" << endl;
-    cin >> n;
+    a = count(n);
 
-    for (base = 1; temp<n; base++) {
-
-        temp = base * base;
-    }
-
-double i;
-
-    for (i=1; i<=10; i++) {
-
-        base = ((n/base) + (base ))/2;
-
-    }
-
-    cout<<"Your square root is "<<base<<endl;
+    cout<<"Total digits in number are "<<a<<endl;
 
     return 0;
+}
+
+
+long long count(long long n) {
+
+
+
+    if(n != 0) {
+
+         n = n / (1*10);
+
+        sum = sum + 1;
+
+        count(n);
+
+    }
+
+return sum;
+
 }
